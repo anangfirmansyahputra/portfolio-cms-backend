@@ -1,14 +1,14 @@
 build:
-	@go build -o bin/ecom cmd/main.go
+	@go build -o bin/portfolio-cms cmd/main.go
 
 test:
 	@go test -v ./...
 
 run: build
-	@./bin/ecom
+	@./bin/portfolio-cms
 
 migration:
-	@migrate create -ext sql -dir cmd/migrate/migrations $(filter-out $@,$(MAKECMDGOALS))
+	@migrate create -ext sql -dir cmd/migrate/migrations -seq $(name)
 	
 migrate-up:
 	@go run cmd/migrate/main.go up

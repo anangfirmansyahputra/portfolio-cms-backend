@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS portfolios(
+  `id` INT UNSIGNED AUTO_INCREMENT NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
+  `description` TEXT NOT NULL,
+  `demo` VARCHAR(255),
+  `repository` VARCHAR(255) NOT NULL,
+  `tech_stack` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  UNIQUE KEY (title)
+);
